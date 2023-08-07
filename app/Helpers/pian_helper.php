@@ -53,11 +53,12 @@ function getDataResult($table, $cond, $like, $order)
 
     return $row;
 }
-function getDataCount($table, $cond = [''], $like = [''], $or = array())
+function getDataCount($table, $cond, $like = '', $or = array())
 {
     $db = \Config\Database::connect();
 
     $builder = $db->table($table);
+
     if ($cond) {
         $i = 0;
         foreach ($cond as $cnd) {
@@ -80,12 +81,8 @@ function getDataCount($table, $cond = [''], $like = [''], $or = array())
             $builder->like($l[0], $l[1]);
         }
     }
-    $builder->countAllResults();
-    $query = $builder->get();
 
-    //print_r($result);exit;
+    $query = $builder->countAllResults();
+
     return $query;
-}
-function getUri()
-{
 }

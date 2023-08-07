@@ -24,10 +24,8 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/v3/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 
+    <?= $this->renderSection("stylesheet"); ?>
 
-
-    <?php //echo $this->template->stylesheet; 
-    ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -75,14 +73,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0"><?php //echo $title 
-                                            ?></h1>
+                            <h1 class="m-0"><?= $title ?></h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Home</a></li>
-                                <li class="breadcrumb-item active"><?php //echo $title 
-                                                                    ?></li>
+                                <li class="breadcrumb-item active"> <?= $title; ?>
+                                </li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -135,14 +132,8 @@
     <!-- AdminLTE App -->
     <script src="<?php echo base_url() ?>assets/v3/dist/js/adminlte.js"></script>
 
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <!-- <script src="<?php echo base_url() ?>assets/v3/dist/js/pages/dashboard.js"></script> -->
-    <?php //echo $this->template->javascript; 
-    ?>
-    <script type="text/javascript">
-        <?php //echo $this->template->jquery; 
-        ?>
-    </script>
+    <?= $this->renderSection("scripts"); ?>
+
 </body>
 
 </html>

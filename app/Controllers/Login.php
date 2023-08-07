@@ -8,4 +8,8 @@ class Login extends BaseController
     {
         return view('login/login_page');
     }
+    public function loginhandler()
+    {
+        echo "testtt login handler";
+    }
 }

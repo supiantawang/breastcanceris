@@ -95,6 +95,7 @@ class Autoload extends AutoloadConfig
      */
     public $helpers = [
         'pian',
-        'uri'
+        'uri',
+        'form'
     ];
 }

@@ -41,11 +41,12 @@ abstract class BaseController extends Controller
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
-    // protected $session;
+    protected $session;
 
     /**
      * Constructor.
      */
+
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
@@ -54,24 +55,6 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
-    }
-    public function getTest()
-    {
-        // $db = \Config\Database::connect();
-
-        // $builder = $db->table($table);
-        // if ($column != "")
-        //     $builder->where($column, $cond_id);
-
-        // $query = $builder->get();
-
-        // if ($query->getNumRows() > 0) {
-        //     $row = $query->getRow();
-
-        //     return $row->$required;
-        // } else {
-        //     return "no data";
-        // }
-        echo "test";
+        $this->session = \Config\Services::session();
     }
 }
